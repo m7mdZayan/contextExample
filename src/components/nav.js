@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { moviesContext } from "../context/moviesContext";
 
 function Nav(props) {
+  const myCon = useContext(moviesContext);
+
   return (
     <div className="nav">
-      <moviesContext.Consumer>
-        {(context) => <p>Avialable Movies : {context.state.length}</p>}
-      </moviesContext.Consumer>
+      <p>Avialable Movies : {myCon.state.length}</p>
     </div>
   );
 }
