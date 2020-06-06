@@ -1,9 +1,9 @@
 import React from "react";
 
-const Movie = ({ name, price }) => (
+const Movie = (props) => (
   <div className="movie">
-    <p>{name}</p>
-    <p>{price} $</p>
+    <p>{props.name}</p>
+    <p>{props.price}</p>
   </div>
 );
 

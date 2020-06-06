@@ -1,18 +1,19 @@
 import React from "react";
 import Movie from "./movie";
+import { moviesContext } from "../context/moviesContext";
 
 function MoviesList(props) {
-  const movies = [
-    { name: "green street hooligans", price: 55 },
-    { name: "i am back", price: 40 },
-    { name: "the dark side", price: 60 },
-  ];
-
   return (
     <div>
-      {movies.map((movie) => (
-        <Movie name={movie.name} price={movie.price} />
-      ))}
+      <moviesContext.Consumer>
+        {(context) => (
+          <div>
+            {context.state.map((movie) => (
+              <Movie name={movie.name} price={movie.price} key={movie.id} />
+            ))}
+          </div>
+        )}
+      </moviesContext.Consumer>
     </div>
   );
 }
