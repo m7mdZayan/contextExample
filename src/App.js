@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Nav from "./components/nav";
+import MoviesList from "./components/moviesList";
 
 import "./App.css";
 const App = () => {
-  return <div>hello</div>;
+  return (
+    <React.Fragment>
+      <Nav />
+      <MoviesList />
+    </React.Fragment>
+  );
 };
 
 export default App;
